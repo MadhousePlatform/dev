@@ -4,9 +4,38 @@ services:
   frontend:
     build:
       context: src/frontend
+    links:
+      - "api:api"
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./src/frontend:/src"
+
   api:
     build:
       context: src/api
+    links:
+      - "db:db"
+    ports:
+      - "3001:3001"
+    environment:
+      DATABASE_URL: "postgres://madhouse_platform:madhouse_platform@db/madhouse_platform"
+    volumes:
+      - "./src/frontend:/src"
+
   agent:
     build:
       context: src/agent
+    links:
+      - "api:api"
+    volumes:
+      - "./src/frontend:/src"
+
+  db:
+    image: postgres:13.2
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: madhouse_platform
+      POSTGRES_PASSWORD: madhouse_platform
+      POSTGRES_DB: madhouse_platform
