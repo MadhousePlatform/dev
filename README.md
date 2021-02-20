@@ -18,7 +18,7 @@ After cloning this directory, just run `yarn dev`. This will set up the submodul
 
 The front-end runs on http://localhost:3000
 
-The API runs on http://localhost:3001
+The API runs on http://localhost:4000
 
 The DB is PostGres running on port 5432. Use your favourite database tool with the following details:
 

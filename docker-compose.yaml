@@ -18,11 +18,12 @@ services:
     links:
       - "db:db"
     ports:
-      - "3001:3001"
+      - "4000:4000"
     environment:
       DATABASE_URL: "postgres://madhouse_platform:madhouse_platform@db/madhouse_platform"
     volumes:
-      - "./src/frontend:/src"
+      - "./src/api:/src"
+    command: ["yarn", "dev"]
 
   agent:
     build:
@@ -30,7 +31,7 @@ services:
     links:
       - "api:api"
     volumes:
-      - "./src/frontend:/src"
+      - "./src/agent:/src"
 
   db:
     image: postgres:13.2
