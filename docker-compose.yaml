@@ -1,0 +1,12 @@
+version: "3.0"
+
+services:
+  frontend:
+    build:
+      context: src/frontend
+  api:
+    build:
+      context: src/api
+  agent:
+    build:
+      context: src/agent

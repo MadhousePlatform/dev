@@ -1,0 +1,9 @@
+[submodule "src/frontend"]
+	path = src/frontend
+	url = git@github.com:MadhousePlatform/frontend.git
+[submodule "src/api"]
+	path = src/api
+	url = git@github.com:MadhousePlatform/api.git
+[submodule "src/agent"]
+	path = src/agent
+	url = git@github.com:MadhousePlatform/agent.git
