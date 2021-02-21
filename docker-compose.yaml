@@ -8,6 +8,8 @@ services:
       - "api:api"
     ports:
       - "3000:3000"
+    environment:
+      REACT_APP_API: "localhost:4000"
     volumes:
       - "./src/frontend:/src"
     command: ["yarn", "start"]
